@@ -2,16 +2,16 @@
   "name": "tutum-nginx",
   "version": "1.0.0",
   "description": "",
-  "main": "tutum-watch.js",
+  "main": "docker-cloud-watch.js",
   "author": "",
   "license": "ISC",
   "scripts": {
-    "predeploy": "docker build -t willrstern/docker-cloud-nginx:latest .",
-    "deploy": "docker push willrstern/docker-cloud-nginx:latest",
+    "predeploy": "docker build -t arillo/docker-cloud-nginx:latest .",
+    "deploy": "docker push arillo/docker-cloud-nginx:latest",
     "mocha": "mocha --compilers js:babel-register",
     "start": "NGINX_RELOAD=false NGINX_CERTS='./certs' NGINX_CONFIG_FILE='./default.conf' node docker-cloud-watch.js",
-    "pretest": "docker build -t willrstern/docker-cloud-nginx:test -f Dockerfile.test .",
-    "test": "docker run --rm willrstern/docker-cloud-nginx:test"
+    "pretest": "docker build -t arillo/docker-cloud-nginx:test -f Dockerfile.test .",
+    "test": "docker run --rm arillo/docker-cloud-nginx:test"
   },
   "dependencies": {
     "axios": "^0.7.0",
